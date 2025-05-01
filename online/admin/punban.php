@@ -41,7 +41,7 @@ if (ISSET($submit) && ISSET($playerid) && $playerid != 1) {
       $row = mysqli_fetch_row($result);
       echo <<<EOF
 <center>
-<form method="post" action="$_SERVER['PHP_SELF']">
+<form method="post" action="{$_SERVER['PHP_SELF']}">
 <table  width="640" border="1" cellpadding="2" >
 <tr><td>
    Really unban this player?&nbsp;
@@ -63,7 +63,7 @@ EOF;
 <center>
 <table  width="640" border="1" cellpadding="2" >
 <tr>
-<form method="post" action="$_SERVER['PHP_SELF']">
+<form method="post" action="{$_SERVER['PHP_SELF']}">
   <td align="center" bgcolor="#c0c0c0">Enter target id:</td>
   <td><input type="text" name="playerid" size="25"></td>
   <td colspan="2"><input type=submit value="  Search  " name=submit></td>

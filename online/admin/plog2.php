@@ -226,7 +226,7 @@ if ($id != 0 || ($data!="" && $submit==1)) {
 
 	if ($row[3] != "") {
 	  $data = $row[3];
-          if ( ereg ("([^\[]*)\[([0-9]*)].*", $data, $out_id)) {
+          if (preg_match('/([^\[]*)\[([0-9]*)].*/', $data, $out_id)) {
             echo "<td><a href=\"".$_SERVER['PHP_SELF']."?submit=1&data=$data$f\">$out_id[1]</a> [";
             echo "<a href=\"$base_path/pinfo.php?submit=1&playerid=$out_id[2]\">$out_id[2]</a>]</td>";
           } else 

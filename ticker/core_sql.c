@@ -37,10 +37,10 @@ void check_error (MYSQL *mysql)
 
 MYSQL *init_connection (options *opt) 
 {
-  char *db_host = "localhost";
-  char *db_user = "db_user_mypa";
-  char *db_passwd = "pw_db__mypa";
-  char *db_db = "db_mypa";
+  char *db_host = "172.25.93.218";
+  char *db_user = "myus";
+  char *db_passwd = "mypw";
+  char *db_db = "mydb";
   char *db_socket = "/var/lib/mysql/mysql.sock";
   unsigned int db_port = 3306;
   unsigned int db_client_flag = CLIENT_COMPRESS|CLIENT_IGNORE_SPACE;

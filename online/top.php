@@ -94,15 +94,22 @@ function top_header($myrow) {
   $online = get_online();
 
   global $tickfile;
+
   if (file_exists($tickfile . '.run')) {
     $diff = time() - filemtime($tickfile . '.run');
     if ($diff < 60) {
-      if ($diff < 30) 
-	$tdate = "Last: <span class=\"norm\" id=\"myt\">$diff</span> sec ago";
-      else
+      if ($diff < 30) {
+        $tdate = "Last: <span class=\"norm\" id=\"myt\">$diff</span> sec ago";
+      } else {
         $tdate = "Last: <span class=\"red\" id=\"myt\">$diff</span> sec ago";
+      }
     } else {
-      $tdate = sprintf("Last: %02d:%02d:%02d ago", ($diff/3600),($diff%3600)/60, $diff%60);
+      $tdate = sprintf(
+        "Last: %02d:%02d:%02d ago",
+        floor($diff / 3600),
+        floor(($diff % 3600) / 60),
+        $diff % 60
+      );
     }
   } else {
     $tdate = "<span class=\"red\">Ticks stopped</span>";

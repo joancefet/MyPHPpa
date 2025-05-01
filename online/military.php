@@ -628,7 +628,7 @@ $res = mysqli_query($db, $q );
 $row = mysqli_fetch_row ($res);
 
 $ship_opt = "";
-while (list ($num, $name) = each ($ships)) {
+foreach ($ships as $num => $name) {
 
   if ($num < 255) {
     $ship_opt .= "<option value=\"$num\">$name</option>\n"; 

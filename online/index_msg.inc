@@ -26,3 +26,4 @@ or visit <a href="http://myphppa.de">MyPHPpa Homepage</a>.
 <br>
 This site uses cookies to enhance the game experience. By login in
 or signing in you accept this.
+<?php ?>
