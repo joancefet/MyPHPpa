@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -25,7 +25,7 @@ require_once "admform.php";
 require_once "../planet_util.inc";
 require_once "../player_move.php";
 
-function clean_galaxy (string $sx, string $sy): void {
+function clean_galaxy ($sx, $sy) {
   echo "You have to clean up the gal ($sx, $sy) by hand!";
 }
 

@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -23,7 +23,7 @@ require "standard.php";
 require "news_util.php";
 require "planet_util.inc";
 
-function select_list (string $exclude=0): void {
+function select_list ($exclude=0) {
   global $db, $myrow;
 
   $ret = "";
@@ -41,7 +41,7 @@ function select_list (string $exclude=0): void {
   return $ret;
 }
 
-function vote_rows (string $vmin, string $table_stub): void {
+function vote_rows ($vmin, &$table_stub) {
   global $db, $myrow, $galcommander_id, $galcommander_name, $Planetid;
 
   $table_stub = "";
@@ -99,7 +99,8 @@ function vote_rows (string $vmin, string $table_stub): void {
   return $select;
 }
 
-function vote_possible (): void {  
+function vote_possible ()
+{  
   global $db, $myrow;
 
   $q = "SELECT count(*) from planet WHERE x=$myrow[x] and y=$myrow[y] ".
@@ -111,7 +112,7 @@ function vote_possible (): void {
   return $row[0];
 }
 
-function calc_exile_cost(): void {
+function calc_exile_cost() {
   global $db, $myrow;
   
   $q = "SELECT sum(score) FROM planet WHERE x='$myrow[x]' AND y='$myrow[y]'";

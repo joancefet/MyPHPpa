@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -24,7 +24,7 @@ require_once "admform.php";
 require_once "../create_user.php";
 require_once "admin_pw.inc";
 
-function create_gal (string $x, string $y): void {
+function create_gal ($x, $y) {
   global $db;
 
   $result = mysqli_query ($db, "SELECT id FROM galaxy WHERE x='$x' AND y='$y'" );
@@ -34,7 +34,7 @@ function create_gal (string $x, string $y): void {
   }
 }
 
-function trunc_table (string $table): void {
+function trunc_table ($table) {
   global $db, $dbname;
 
   echo "TRUNCATE TABLE $dbname.$table<br>";
@@ -46,7 +46,7 @@ function trunc_table (string $table): void {
   }
 }
 
-function create_admin (): void {
+function create_admin () {
   global $db;
   global $admin_pw, $mod_pw;
 

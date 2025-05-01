@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -25,7 +25,7 @@ $extra_header = "   <TITLE>$game $version</TITLE>\n\n".
 "<SCRIPT LANGUAGE=\"javascript\">\n".
 "<!--\n".
 "// Begin\n".
-"function popupWindow(_name, _page, _height, _width): void {\n".
+"function popupWindow(_name, _page, _height, _width) {\n".
 "  var window_options = \"toolbar=no, menubar=no, location=no\";\n".
 "  window_options += \", scrollbars=no, resize=yes\";\n".
 "  window_options += \",height=\" + _height;\n".

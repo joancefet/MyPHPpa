@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -19,7 +19,7 @@ declare(strict_types=1);
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-function titlebox (string $title, string $msg=""): void {
+function titlebox ($title, $msg="") {
 
   $line = "<td width=\"40%\"><hr></td>";
   echo "<center><table class=\"titlebox\" cellpadding=\"10\">".

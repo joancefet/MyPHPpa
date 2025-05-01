@@ -13,7 +13,8 @@
 // From: https://gist.github.com/521810.git
 //       https://gist.github.com/tylerhall/521810
 
-function generateStrongPassword(string $length = 9, string $add_dashes = false, string $available_sets = 'luds'): void {
+function generateStrongPassword($length = 9, $add_dashes = false, $available_sets = 'luds')
+{
 	$sets = array();
 	if(strpos($available_sets, 'l') !== false)
 		$sets[] = 'abcdefghjkmnpqrstuvwxyz';
@@ -26,7 +27,7 @@ function generateStrongPassword(string $length = 9, string $add_dashes = false, 
 
 	$all = '';
 	$password = '';
-	forforeach ($sets as $set)
+	foreach($sets as $set)
 	{
 		$password .= $set[array_rand(str_split($set))];
 		$all .= $set;

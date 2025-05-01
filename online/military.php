@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -25,7 +25,7 @@ require "fleet_util.php";
 require "news_util.php";
 require "logging.php";
 
-function set_hostile (string $id, string $dir): void {
+function set_hostile ($id, $dir) {
   global $db, $Planetid;
 
   $coords = get_coord ($id);
@@ -53,7 +53,7 @@ function set_hostile (string $id, string $dir): void {
   $result = mysqli_query ($db, $q );
 }
 
-function set_friendly (string $id, string $dir): void {
+function set_friendly ($id, $dir) {
   global $db, $Planetid;
 
   if ($dir > 0) {
@@ -69,7 +69,7 @@ function set_friendly (string $id, string $dir): void {
   $result = mysqli_query ($db, $q );
 }
 
-function check_self_attack (string $id, string $type): void {
+function check_self_attack ($id, $type) {
   global $db, $Planetid;
 
   $t = ($type<10? ">9" : "<10");
@@ -84,7 +84,7 @@ function check_self_attack (string $id, string $type): void {
     return 0;
 }
 
-function get_attac_fleet (string $id): void {
+function get_attac_fleet ($id) {
   global $db;
 
   $q = "SELECT SUM(FLOOR(units.num*(unit_class.metal+unit_class.crystal)/10)) ".
@@ -101,7 +101,7 @@ function get_attac_fleet (string $id): void {
     return 0;
 }
 
-function get_num_units (string $fleet_id, string $unit_id): void {
+function get_num_units ($fleet_id, $unit_id) {
   global $db;
 
   $res = mysqli_query ($db, "SELECT SUM(num) from units ".
@@ -114,7 +114,7 @@ function get_num_units (string $fleet_id, string $unit_id): void {
   return 0;
 }
 
-function check_valid (string $id,string $type): void {
+function check_valid ($id,$type) {
   global $myrow, $Planetid;
   global $noob_prot, $high_prot, $havoc;
 
@@ -160,7 +160,7 @@ function check_valid (string $id,string $type): void {
   return "";
 }
 
-function transfer_ship (string $type, string $num, string $from, string $to): void {
+function transfer_ship ($type, $num, $from, $to) {
 
   global $db, $Planetid;
   global $missile_id;
@@ -231,7 +231,7 @@ function transfer_ship (string $type, string $num, string $from, string $to): vo
   return "";
 }
 
-function print_target_row(string $flnum, string $x, string $y, string $z, string $pname, string $type, string $ticks): void {
+function print_target_row($flnum, $x, $y, $z, $pname, $type, $ticks) {
   global $myrow, $ship_in_fleet;
 
   echo "<tr><td>Fleet $flnum</td>\n<td>";
@@ -290,7 +290,7 @@ function print_target_row(string $flnum, string $x, string $y, string $z, string
   }
 }
 
-function send_fleet (string $flnum, string $order, string $x, string $y, string $z): void {
+function send_fleet ($flnum, $order, $x, $y, $z) {
 
   global $db, $Planetid, $myrow, $havoc;
   $msg = "";
@@ -397,7 +397,7 @@ function send_fleet (string $flnum, string $order, string $x, string $y, string 
   return $msg;
 }
 
-function send_missile (string $num, string $x, string $y, string $z): void {
+function send_missile ($num, $x, $y, $z) {
 
   global $db, $Planetid, $myrow, $havoc;
   global $missile_id, $number_of_fleets;
@@ -578,7 +578,7 @@ if (ISSET($_POST["launch"])) {
   $msg .= send_missile ($_POST["miss_num"], $_POST["miss_x"], $_POST["miss_y"], $_POST["miss_z"]);
 }
 
-function rtime (): void {
+function rtime () {
   global $start_time, $Planetid;
 
   if ($Planetid != 1) return;

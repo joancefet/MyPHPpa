@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -19,7 +19,7 @@ declare(strict_types=1);
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-function get_alliance_tag(string $aid): void {
+function get_alliance_tag($aid) {
   global $db, $myrow;
 
   if ($aid == 0)
@@ -34,7 +34,7 @@ function get_alliance_tag(string $aid): void {
  }
 }
 
-function print_uni_row (string $rank, string $row): void {
+function print_uni_row ($rank, $row) {
   global $Planetid, $myrow, $tag;
 
   $tag_cell = "";
@@ -74,7 +74,7 @@ function print_uni_row (string $rank, string $row): void {
     "</tr>\n";
 }
 
-function print_universe_player_report (string $db): void {
+function print_universe_player_report ($db) {
   global $tag, $myrow;
 
   if (($myrow["status"] & 2)==0 && $myrow["alliance_id"] != 0)
@@ -101,7 +101,7 @@ function print_universe_player_report (string $db): void {
   }
 }
 
-function print_gal_row (string $rank, string $row): void {
+function print_gal_row ($rank, $row) {
   global $myrow, $db;
 
   if ($myrow["x"] == $row[0] && $myrow["y"] == $row[1]) {
@@ -130,7 +130,7 @@ function print_gal_row (string $rank, string $row): void {
     "</tr>\n";
 }
 
-function print_universe_galaxy_report (string $galrank): void {
+function print_universe_galaxy_report ($galrank) {
   // global $db;
 
   if ($galrank != 0) {
@@ -145,7 +145,7 @@ function print_universe_galaxy_report (string $galrank): void {
 
 }
 
-function get_universe_galaxy_report (string $myrank): void {
+function get_universe_galaxy_report (&$myrank) {
   global $db, $myrow;
 
   $myrank = 0;
@@ -177,7 +177,7 @@ function get_universe_galaxy_report (string $myrank): void {
   }
 }
 
-function print_alliance_row (string $rank, string $row): void {
+function print_alliance_row ($rank, $row) {
   global $myrow;
 
   if ($myrow["alliance_id"] == $row["aid"])
@@ -195,7 +195,7 @@ function print_alliance_row (string $rank, string $row): void {
 EOF;
 }
 
-function print_universe_alliance_report (): void {
+function print_universe_alliance_report () {
   global $db;
 
   $q = "SELECT alliance.id AS aid, tag, hcname, members, ".

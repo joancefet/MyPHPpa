@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -19,7 +19,7 @@ declare(strict_types=1);
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-function check_ip(string $ip): void {
+function check_ip($ip) {
   global $db;
 
   $q = "SELECT * FROM iptables WHERE ip = '$ip'";

@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -21,7 +21,7 @@ declare(strict_types=1);
 
 require "standard.php";
 
-function add_img_path(string $name, string $alt): void {
+function add_img_path($name, $alt) {
   global $imgpath;
 
   if ($imgpath && $imgpath != "") {
@@ -32,7 +32,7 @@ function add_img_path(string $name, string $alt): void {
   }
 }
 
-function print_news_head (string $date, string $type, string $id, string $ntick): void {
+function print_news_head ($date, $type, $id, $ntick) {
 
   switch ($type) {
   case 1: $img = add_img_path("battle.png","Bat"); $txt = "Military"; break;

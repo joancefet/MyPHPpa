@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -21,7 +21,7 @@ declare(strict_types=1);
 
 require "newcoords.php";
 
-function player_move(string $sx,string $sy,string $sz,string $tx=0,string $ty=0,string $tz=0): void {
+function player_move($sx,$sy,$sz,$tx=0,$ty=0,$tz=0) {
   global $db;
 
   $res = mysqli_query($db, "SELECT id FROM planet ".
@@ -36,7 +36,7 @@ function player_move(string $sx,string $sy,string $sz,string $tx=0,string $ty=0,
   }
 }
 
-function player_move_id (string $id, string $sx, string $sy, string $sz, string $tx=0, string $ty=0, string $tz=0): void {
+function player_move_id ($id, $sx, $sy, $sz, $tx=0, $ty=0, $tz=0) {
   global $db;
 
   if (!$id || $id==1) {
@@ -62,7 +62,7 @@ function player_move_id (string $id, string $sx, string $sy, string $sz, string 
   return insert_player ($id, $tx, $ty, $tz);
 }
 
-function insert_player (string $id, string $tx=0,string $ty=0,string $tz=0): void {
+function insert_player ($id, $tx=0,$ty=0,$tz=0) {
   global $db;
 
   if ($tx==0 || $ty==0 || $tz==0) {

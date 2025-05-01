@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -21,7 +21,7 @@ declare(strict_types=1);
 
 require "standard.php";
 
-function print_cost (string $m, string $c, string $e=0): void {
+function print_cost ($m, $c, $e=0) {
   $res = "Cost: ";
   if ($m) $res .= "$m Metal";
   if ($c) {
@@ -35,7 +35,7 @@ function print_cost (string $m, string $c, string $e=0): void {
   return $res;
 }
 
-function print_unit_row (string $row, string $stock): void {
+function print_unit_row ($row, $stock) {
 
   $cost = print_cost ($row[3], $row[4], $row[5]);
 
@@ -44,7 +44,7 @@ function print_unit_row (string $row, string $stock): void {
     "<td><input type=\"text\" name=\"ship_$row[0]\" size=\"8\"></td></tr>\n"; 
 }
 
-function prod_unit (string $unit, string $num): void {
+function prod_unit ($unit, $num) {
   global $myrow; /* resources */
   global $Planetid, $db, $msg;
 

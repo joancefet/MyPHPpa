@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -19,10 +19,10 @@ declare(strict_types=1);
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-function welcome_mail (string $pid): void {
+function welcome_mail ($pid) {
 }
 
-function create_user (string $pid): void {
+function create_user ($pid) {
 
   global $db, $number_of_fleets, $start_roids;
   global $start_resource;

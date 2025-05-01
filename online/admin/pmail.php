@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -22,7 +22,7 @@ declare(strict_types=1);
 require_once "admhead.php";
 require_once "admform.php";
 
-function print_mail (string $r): void {
+function print_mail ($r) {
   
   $id = $r["id"];
   $text = preg_replace ("/</", "&lt;", $r["text"]);

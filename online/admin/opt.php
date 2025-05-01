@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -22,7 +22,7 @@ declare(strict_types=1);
 require_once "admhead.php";
 require_once "admform.php";
 
-function t(): void {
+function t() {
   global $start_time;
   $end_time = getmicrotime();
   $diff_time = $end_time - $start_time ;

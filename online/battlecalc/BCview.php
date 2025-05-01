@@ -1,7 +1,6 @@
 <html>
 
 <?php
-declare(strict_types=1);
 if (ISSET($_REQUEST["style"])) $style = $_REQUEST["style"];
 
 	if ( !$style || (int)$style != $style )

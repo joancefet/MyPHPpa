@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -22,7 +22,7 @@ declare(strict_types=1);
 require "standard.php";
 /* top table is written now */
 
-function print_rc_row (string $row, string $status): void {
+function print_rc_row ($row, $status) {
 
   global $db, $Planetid;
 
@@ -66,7 +66,7 @@ function print_rc_row (string $row, string $status): void {
   echo "</tr>\n";
 }
 
-function build_research (string $id): void {
+function build_research ($id) {
 
   global $myrow; /* resources */
   global $Planetid, $db,$msg;

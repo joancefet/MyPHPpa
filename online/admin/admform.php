@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -19,7 +19,7 @@ declare(strict_types=1);
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-function print_admin_row (string $row,string $num): void {
+function print_admin_row ($row,$num) {
   echo "<tr>\n";
   for ($i=0; $i<$num; $i++) {
     echo "<td>" . $row[$i] ."</td>\n";
@@ -27,7 +27,7 @@ function print_admin_row (string $row,string $num): void {
   echo "</tr>\n";
 }
 
-function admin_form_field (string $type, string $name, string $size=8, string $maxsize=8, string $cols=30, string $rows=1): void {
+function admin_form_field ($type, $name, $size=8, $maxsize=8, $cols=30, $rows=1) {
 
   if ($type=="text") {
     echo "<td><input type=\"text\" name=\"$name\" size=\"$size\" maxlength=\"$maxsize\"></td>\n";
@@ -36,7 +36,7 @@ function admin_form_field (string $type, string $name, string $size=8, string $m
   }
 }
 
-function submit_values(string $id, string $values, string $table): void {
+function submit_values($id, $values, $table) {
   global $db;
 
   $q = "select * from $table WHERE id = '$id'"; 

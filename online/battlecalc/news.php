@@ -1,5 +1,5 @@
-<?php
-declare(strict_types=1);
+<?php 
+
 echo "Fixed some errors due to update from PHP 4.x to PHP 5.x, 7x";
 
 ?>

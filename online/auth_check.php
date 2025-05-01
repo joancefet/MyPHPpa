@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -19,7 +19,7 @@ declare(strict_types=1);
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 // hier weiter auf session umstellen
-function pre_auth(string $Username, string $Password, string $Planetid, string $Valid, string $location="index.php"): void {
+function pre_auth($Username, $Password, $Planetid, $Valid, $location="index.php") {
   global $round;
 
   if ( !$Username || $Username=="" || 
@@ -33,7 +33,7 @@ function pre_auth(string $Username, string $Password, string $Planetid, string $
   }
 }
 
-function db_auth(string $db,string $Username,string $Password,string $Planetid): void {
+function db_auth($db,$Username,$Password,$Planetid) {
   global $mysettings;
 
   $result = mysqli_query($db, "SELECT user.last,user.settings ".
@@ -66,7 +66,7 @@ function db_auth(string $db,string $Username,string $Password,string $Planetid):
   } 
 }
 
-function gen_cookie (): void {
+function gen_cookie () {
 
   mt_srand ((double) microtime() * 1000000);
   $randval = mt_rand();

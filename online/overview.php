@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -22,7 +22,7 @@ declare(strict_types=1);
 require "standard.php";
 require "planet_util.inc";
 
-function print_coords (string $x, string $y, string $z): void {
+function print_coords ($x, $y, $z) {
   return "<A HREF=\"galaxy.php?submit=1&x=$x&y=$y\">$x:$y:$z</A>";
 }
 

@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -22,7 +22,7 @@ declare(strict_types=1);
 require_once "admhead.php";
 require_once "admform.php";
 
-function expand_universe (): void {
+function expand_universe () {
   global $db, $universe_size, $cluster_size;
 
   echo "Expanding Universe...Up to $universe_size:$cluster_size<br>";

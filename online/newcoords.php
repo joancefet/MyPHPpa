@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -20,7 +20,7 @@ declare(strict_types=1);
  */
 
 
-function get_new_coords (string $x, string $y, string $z, string $open_cluster=1): void {
+function get_new_coords (&$x, &$y, &$z, $open_cluster=1) {
   global $db;
   global $universe_size, $cluster_size, $gal_size;
   // $open_cluster=1;

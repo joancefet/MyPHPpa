@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -22,7 +22,7 @@ declare(strict_types=1);
 $close_script="<SCRIPT LANGUAGE=\"javascript\">\n".
 "<!--\n".
 "// Begin\n".
-"function wclose(): void {".
+"function wclose() {".
 "  this.close();".
 "}\n// END\n//-->\n</SCRIPT>\n";
 

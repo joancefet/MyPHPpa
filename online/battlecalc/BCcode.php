@@ -1,6 +1,5 @@
 <?php
-declare(strict_types=1);
-include "ShipTypes.php";
+	include "ShipTypes.php";
 
    	/* fleet data */
    	$Fleet = Array();
@@ -29,7 +28,8 @@ include "ShipTypes.php";
   	/* Paste text */
    	$PasteText = "";
 
-	function CreateShipGroup( string $ShipGroup, string $ShipType, string $BeginAmount): void {
+	function CreateShipGroup( &$ShipGroup, $ShipType, $BeginAmount)
+    {
         $ShipGroup["Type"] = $ShipType;
         $ShipGroup["BeginAmount"] = $BeginAmount;
         $ShipGroup["Amount"] = $BeginAmount;
@@ -41,14 +41,16 @@ include "ShipTypes.php";
         $ShipGroup["TargetNr"] = 0;
     }
 
-	function CalcLog( string $InputString, string $deepness = 1 ): void {
+	function CalcLog( $InputString, $deepness = 1 )
+	{
 		global $CalcLog, $DepthLog;
 
 		if ( $deepness == $DepthLog )
 			$CalcLog .= $InputString;
 	}
 
-	function AddTotals ( string $Type, string $Total, string $Amount ): void {
+	function AddTotals ( $Type, &$Total, $Amount )
+	{
 		$Total["Amount"]  = (ISSET($Total) && array_key_exists("Amount", $Total)?$Total["Amount"]:0) + $Amount;
 		$Total["Fuel"]    = (ISSET($Total) && array_key_exists("Fuel", $Total )?$Total["Fuel"] :0) + $Amount * $Type["Fuel"];
 		$Total["Crystal"] = (ISSET($Total) && array_key_exists("Crystal", $Total )?$Total["Crystal"] :0) + $Amount * $Type["Crystal"];
@@ -59,14 +61,16 @@ include "ShipTypes.php";
 			$Total["Worth"] = (ISSET($Total) && array_key_exists("Worth", $Total )?$Total["Worth"] :0) + $Amount * 1500;
 	}
 
-	function CalcTotals ( string $Flt, string $t, string $Totals ): void {
+	function CalcTotals ( $Flt, $t, &$Totals )
+	{
 		AddTotals( $Flt["Ships"][$t]["Type"], $Totals["TotalShips"], $Flt["Ships"][$t]["BeginAmount"] );
 		AddTotals( $Flt["Ships"][$t]["Type"], $Totals["TotalLost"], $Flt["Ships"][$t]["BeginAmount"]- $Flt["Ships"][$t]["Amount"] ); /* Removed " + $Flt[$t]["Gained"]" */
 		AddTotals( $Flt["Ships"][$t]["Type"], $Totals["TotalStunned"], $Flt["Ships"][$t]["Stunned"] );
 
 	}
 
-    function MainLoop ( string $NumCalcs ): void {
+    function MainLoop ( $NumCalcs )
+    {
         global $ShipTypes, $Fleet, $CalcLogBuffer;
 
         for( $t = 0 ; $t < $NumCalcs ; $t++ )
@@ -110,7 +114,8 @@ include "ShipTypes.php";
 
     }
 
-    function ActInitiative ( string $AttFlt, string $DefFlt, string $InitCount, string $who ): void {
+    function ActInitiative ( &$AttFlt, &$DefFlt, $InitCount, $who )
+    {
     	global $CalcLogBuffer;
 
     	$Att = &$AttFlt["Ships"];
@@ -189,7 +194,8 @@ include "ShipTypes.php";
         }
     }
 
-    function IsTarget ( string $AttType, string $DefType, string $Target ): void {
+    function IsTarget ( $AttType, $DefType, $Target )
+    {
     	global $EmpTargets;
 
         if ( $DefType["ShipClass"] == $Target || $Target == "*" )
@@ -212,7 +218,8 @@ include "ShipTypes.php";
 	    return false;
 	}
 
-    function AttackTargets( string $AttFlt, string $Att, string $DefFlt, string $Def, string $Target, string $inGuns ): void {
+    function AttackTargets( &$AttFlt, &$Att, &$DefFlt, &$Def, $Target, $inGuns )
+    {
 		global $CalcType, $Warning, $CalcLogBuffer, $RoidChance, $RoidChanceHistory, $CapRule;
 
 		/* Return Done if shooter is an EMPer and targeting "*" */
@@ -356,7 +363,8 @@ include "ShipTypes.php";
 	    return array($inGuns-$ShotsUsed, false);
     }
 
-	function ResolveAvgShots( string $FiringOnThese, string $AttShips, string $DefShips, string $Def, string $RoidChance ): void {
+	function ResolveAvgShots( $FiringOnThese, &$AttShips, &$DefShips, &$Def, $RoidChance )
+	{
 		global $CalcLogBuffer;
 
 		/* returns shots fired, calcs & adds casualties */
@@ -520,7 +528,8 @@ include "ShipTypes.php";
 		}
 	}
 
-    function ResolveShot( string $AttShips, string $DefShips ): void {
+    function ResolveShot( $AttShips, $DefShips )
+    {
 	    $RandomNr= rand(0, 100);
 
 		if ( $AttShips["Type"]["Special"] == "EMPs" )
@@ -538,7 +547,8 @@ include "ShipTypes.php";
 //            $DefShips["BeingStolen"] = true;
     }
 
-    function CleanUp( string $DefFlt ): void {
+    function CleanUp( &$DefFlt )
+    {
     	$Def = &$DefFlt["Ships"];
     	$DefFlt["Totals"] = null;
 
@@ -577,7 +587,8 @@ include "ShipTypes.php";
         }
     }
 
-    function ClearHitsStuns ( string $Flt ): void {
+    function ClearHitsStuns ( &$Flt )
+    {
 		for ( $t = 0; $t < count($Flt); $t++ )
         {
         	$Flt[$t]["Stunned"] = 0;
@@ -585,7 +596,8 @@ include "ShipTypes.php";
         }
     }
 
-	function GetJSTargets ( string $Att, string $AttNr, string $Def, string $Side, string $Target ): void {
+	function GetJSTargets ( $Att, $AttNr, $Def, $Side, $Target )
+	{
 		if ($Target == "Target1")
 			$TmpTarget = 0;
 		elseif ($Target == "Target2")
@@ -619,7 +631,8 @@ include "ShipTypes.php";
 	}
 
 
-    function WriteJSInfo( string $Att, string $Def, string $Side ): void {
+    function WriteJSInfo( &$Att, &$Def, $Side )
+    {
 
 		echo "   ShipTargets[$Side] = new Array;\n";
 
@@ -636,8 +649,10 @@ include "ShipTypes.php";
 
 	}
 
-    function WriteFleets( string $AttFlt, string $DefFlt ): void {
-		function MakeResult( string $amount, string $report, string $report_in_place ): void {
+    function WriteFleets( $AttFlt, $DefFlt )
+    {
+		function MakeResult( $amount, $report, $report_in_place )
+		{
 			global $overall_accuracy;
 
 			if ( $report_in_place && ($report || $amount) )
@@ -875,7 +890,8 @@ include "ShipTypes.php";
 		/* end function WriteFleets */
 	}
 
-	function AddKilosMils ( string $Value ): void {
+	function AddKilosMils ( $Value )
+	{
 		/* put a ..k or ...M after values to shorten them */
 		if ( $Value > 20000000 )
 			return round($Value / 100000)/10 . "M";
@@ -885,7 +901,8 @@ include "ShipTypes.php";
 		return $Value;
 	}
 
-	function FillFleet( string $Command, string $Array ): void {
+	function FillFleet( $Command, $Array )
+	{
 	        global $ShipTypes, $Fleet, $ShipBattleRep, $PasteText;
 	
         	$Fleet[0]["Side"] = "<span class=attacker>Attacker</span>";
@@ -1021,7 +1038,7 @@ include "ShipTypes.php";
         {
         	$tel_att = 0;
         	$tel_def = 0;
-		    forforeach ( (array)$Array as $key => $value )
+		    foreach( (array)$Array as $key => $value )
 		    {
 		    	if ( $key[0] == "t" )
 		    	{

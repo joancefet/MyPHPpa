@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -22,7 +22,7 @@ declare(strict_types=1);
 require_once "admhead.php";
 require_once "admform.php";
 
-function print_td(string $row): void {
+function print_td($row) {
   echo "<tr>";
 
   foreach ($row as $value) 
@@ -31,7 +31,7 @@ function print_td(string $row): void {
   echo "</tr>\n";
 }
 
-function query_table (string $query): void {
+function query_table ($query) {
   global $db;
 
   $res = mysqli_query($db, $query );
@@ -57,7 +57,7 @@ function query_table (string $query): void {
   echo "</table>\n";
 }
 
-function list_banned_player (): void {
+function list_banned_player () {
 
   $q = "SELECT id, leader,planetname,x,y,z FROM planet WHERE mode=0";
 

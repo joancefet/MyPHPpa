@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 if (ISSET($_REQUEST["tdinterceptor"])) $tdinterceptor = $_REQUEST["tdinterceptor"];
 if (ISSET($_REQUEST["tdpheonix"])) $tdpheonix = $_REQUEST["tdpheonix"];
 if (ISSET($_REQUEST["tdwarfrigate"])) $tdwarfrigate = $_REQUEST["tdwarfrigate"];

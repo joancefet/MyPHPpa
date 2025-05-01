@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -21,7 +21,7 @@ declare(strict_types=1);
 
 require "standard.php";
 
-function print_cost (string $m, string $c, string $e=0): void {
+function print_cost ($m, $c, $e=0) {
   $res = "";
   if ($m) $res .= "$m M ";
   if ($c) {
@@ -33,7 +33,7 @@ function print_cost (string $m, string $c, string $e=0): void {
   return $res;
 }
 
-function get_factor(): void {
+function get_factor() {
   global $page;
 
   if ($page && $page=="sell") {
@@ -44,7 +44,7 @@ function get_factor(): void {
   return $factor;
 }
 
-function print_unit_row (string $row, string $stock, string $type, string $base=-1): void {
+function print_unit_row ($row, $stock, $type, $base=-1) {
 
   $factor = get_factor();
   $cost = print_cost ($row[2] * $factor, $row[3] * $factor, $row[4] * $factor);
@@ -65,7 +65,7 @@ function print_unit_row (string $row, string $stock, string $type, string $base=
   }
 }
 
-function get_num_from_price (string $price, string $num): void {
+function get_num_from_price ($price, $num) {
   global $myrow; /* resources */
 
   if ( $myrow["metal"] < ($price[0] * $num) ) {
@@ -81,7 +81,7 @@ function get_num_from_price (string $price, string $num): void {
   return $num;
 }
 
-function get_market_price (string $num, string $price): void {
+function get_market_price ($num, $price) {
   global $myrow; /* resources */
   global $db, $Planetid, $msg;
 
@@ -97,7 +97,7 @@ function get_market_price (string $num, string $price): void {
   return $result;
 }
 
-function pay_market_price (string $num, string $price): void {
+function pay_market_price ($num, $price) {
   global $myrow; /* resources */
   global $db, $Planetid;
 
@@ -111,7 +111,7 @@ function pay_market_price (string $num, string $price): void {
   return $result;
 }
 
-function trade_ship_unit (string $unit, string $num): void {
+function trade_ship_unit ($unit, $num) {
   global $Planetid, $db, $msg;
 
   $msg .= "$unit, $num<br>";
@@ -176,7 +176,8 @@ function trade_ship_unit (string $unit, string $num): void {
   }
 }
 
-function market_table_head (string $type, string $flag): void {
+function market_table_head ($type, $flag)
+{
   echo<<<EOF
 <table border="1" width="650">
 <tr><th colspan="6" class="a">$type Market</th></tr>
@@ -192,7 +193,8 @@ EOF;
   }
 }
 
-function market_all(string $q, string $qq, string $name, string $str_type, string $qb=0): void {
+function market_all($q, $qq, $name, $str_type, $qb=0)
+{
   global $Planetid, $db, $page;
 
   $result = mysqli_query ($db, $q );

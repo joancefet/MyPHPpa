@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -19,7 +19,7 @@ declare(strict_types=1);
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-function rval (string $val): void {
+function rval ($val) {
   if ($val < 200000) // 200 thousand
     return pval($val) . "g";
   else if ($val < 10000000) // 10 Millionen
@@ -28,11 +28,11 @@ function rval (string $val): void {
     return pval($val/1000000). "t";
 }
 
-function pval (string $val): void {
+function pval ($val) {
   return number_format($val, 0, ",", ".");
 }
 
-function get_online(): void {
+function get_online() {
   global $db;
 
   $result = mysqli_query($db, "SELECT COUNT(*) from planet");
@@ -51,7 +51,7 @@ function get_online(): void {
   }
 }
 
-function top_header(string $myrow): void {
+function top_header($myrow) {
   global $mytick, $player_ip, $imgpath;
 
   $news = "<td  width=\"20%\" align=center>News";

@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -19,7 +19,7 @@ declare(strict_types=1);
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-function calc_per_roid (string $num,string $mod): void {
+function calc_per_roid ($num,$mod) {
   global $resource_min_per_roid, $resource_max_per_roid;
   global $havoc;
 
@@ -36,7 +36,7 @@ function calc_per_roid (string $num,string $mod): void {
 
 }
 
-function calc_roid_resource (string $myrow): void {
+function calc_roid_resource ($myrow) {
   $sum=$myrow["metalroids"]+$myrow["crystalroids"]+$myrow["eoniumroids"];
 
   $res["metal"] = calc_per_roid ($myrow["metalroids"],$myrow["roid_modifier"]);
@@ -45,13 +45,13 @@ function calc_roid_resource (string $myrow): void {
   return ($res);
 }
 
-function calc_init_cost_new (string $myrow, string $n): void {
+function calc_init_cost_new ($myrow, $n) {
   $b = $myrow["metalroids"]+$myrow["crystalroids"]+$myrow["eoniumroids"];
   $m = $n * (1000 + $b*250 + 250 * ($n-1) /2);
   return $m;
 }
 
-function return_max_init (string $myrow, string $m): void {
+function return_max_init ($myrow, $m) {
   $b = $myrow["metalroids"]+$myrow["crystalroids"]+$myrow["eoniumroids"];
 
   $mm = 0;
@@ -64,11 +64,11 @@ function return_max_init (string $myrow, string $m): void {
   return ($n-1);   
 }
 
-function calc_init_cost (string $myrow): void {
+function calc_init_cost ($myrow) {
   return (($myrow["metalroids"]+$myrow["crystalroids"]+$myrow["eoniumroids"])*250+1000);
 }
 
-function get_planet_income (): void {
+function get_planet_income () {
 
   global $myrow;
 

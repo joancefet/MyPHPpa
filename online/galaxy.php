@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -24,7 +24,7 @@ require "popup_header.inc";
 $extra_header .= "\n<SCRIPT LANGUAGE=\"javascript\">\n".
 "<!--\n".
 "// Begin\n".
-"function popupScrollWindow(_name, _page, _height, _width): void {\n".
+"function popupScrollWindow(_name, _page, _height, _width) {\n".
 "  var window_options = \"toolbar=no, menubar=no, location=no\";\n".
 "  window_options += \", scrollbars=yes, resize=yes\";\n".
 "  window_options += \",height=\" + _height;\n".
