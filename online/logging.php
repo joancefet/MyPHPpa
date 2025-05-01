@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -19,14 +19,14 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-function do_log_id ($id, $class, $event, $data) {
+function do_log_id (string $id, string $class, string $event, string $data): void {
   global $db;
 
   mysqli_query ($db, "INSERT INTO logging SET planet_id='$id', stamp=NOW(),".
     "type='$event', class='$class', data='$data'" );
 }
 
-function do_log_me ($class, $event, $data) {
+function do_log_me (string $class, string $event, string $data): void {
   global $db, $Planetid;
 
  $r=mysqli_query ($db, "INSERT INTO logging SET planet_id='$Planetid',".

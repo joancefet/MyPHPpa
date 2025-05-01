@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 // import_request_variables ("GPC", "");
 
 if ( ISSET($_COOKIE["style"]) && $_COOKIE["style"] != null )
@@ -85,8 +86,7 @@ WriteJSInfo( $Fleet[1]["Ships"], $Fleet[0]["Ships"], 1 );
 ns4 = (document.layers)? true:false;
 ie4 = (document.all)? true:false;
 
-function setStyle(id,nestref, stylename, value)
-{
+function setStyle(id,nestref, stylename, value): void {
   if (ns4)
     {
       //			var lyr = (nestref)? document[nestref].document[id] : document.layers[id];
@@ -100,8 +100,7 @@ function setStyle(id,nestref, stylename, value)
     }
 }
 
-function OnNameOver( Side, FltNr, Over )
-{
+function OnNameOver( Side, FltNr, Over ): void {
   if ( Side == 0 ) Side = 1; else Side = 0;
   SideName = Side ? "a" : "d";
   for( i = 0; i < 3 ; i++ )
@@ -131,8 +130,7 @@ function OnNameOver( Side, FltNr, Over )
     }
 }
 
-function ResetBtnClick( form, notscores )
-{
+function ResetBtnClick( form, notscores ): void {
   for ( t = 0; t < form.elements.length; t++ )
     if ( form.elements[t].type == "text" && form.elements[t].name != "NumCalcs" )
       if ( !((form.elements[t].name == "aplanetscore" || form.elements[t].name == "dplanetscore") && notscores) )

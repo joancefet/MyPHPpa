@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -29,7 +29,7 @@ my_header("",0,0);
 
 require "msgbox.php";
 
-function fetch_name ($id) {
+function fetch_name (string $id): void {
   global $db;
 
   $res = mysqli_query ($db, "SELECT name,type,block_id FROM rc_class WHERE id='$id'"); 
@@ -39,7 +39,7 @@ function fetch_name ($id) {
   return $row;
 }
 
-function rcell ($id) {
+function rcell (string $id): void {
   if ($id==-1) {
     echo "<td></td>";
     return;
@@ -60,7 +60,7 @@ function rcell ($id) {
   echo "</td>";
 }
 
-function rrow ($a_id) {
+function rrow (string $a_id): void {
 
   echo "<tr>";
   reset ($a_id);

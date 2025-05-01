@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -51,7 +51,7 @@ require "logging.php";
 require "msgbox.php";
 require_once "mobile.inc";
 
-function do_logout ($msg) {
+function do_logout (string $msg): void {
 
   session_kill();
 
@@ -70,7 +70,7 @@ function do_logout ($msg) {
 
 $msg = "";
 
-function check_status($sleep) {
+function check_status(string $sleep): void {
   global $db, $Planetid;
   global $msg, $havoc;
   global $sleep_period;
@@ -129,7 +129,7 @@ function check_status($sleep) {
   return 0;
 }
 
-function show_preference($descr, $choice, $set) {
+function show_preference(string $descr, string $choice, string $set): void {
   global $mysettings;
   $selected = array((($mysettings & $set)?"":"selected"),
                     (($mysettings & $set)?"selected":""));

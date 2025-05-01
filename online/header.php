@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -21,7 +21,7 @@
 
 include_once "auth_check.php";
 
-function my_header ($extra=0,$sess=1,$tickjs=1) {
+function my_header (string $extra=0,string $sess=1,string $tickjs=1): void {
   global $imgpath, $game, $version, $ticktime;
   global $Planetid, $mytick, $mysettings;
 
@@ -57,7 +57,7 @@ var aD = $dtick;
 var aT = $mytick;
 var aR = 0;
 
-function MyTick() {
+function MyTick(): void {
  aS = aS+1;
  aD = aD+1;
  if (aS >= $ticktime) {

@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -19,7 +19,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-function get_ip($type=0) {
+function get_ip(string $type=0): void {
 
   if ($type)
     return $_SERVER['REMOTE_ADDR'];
@@ -37,7 +37,7 @@ function get_ip($type=0) {
   return $ip;
 }
 
-function get_type($type=0) {
+function get_type(string $type=0): void {
 
   return $_SERVER['HTTP_USER_AGENT'];
 

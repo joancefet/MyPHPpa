@@ -1,5 +1,6 @@
 <?php
-	include "ShipTypes.php";
+declare(strict_types=1);
+include "ShipTypes.php";
 
    	/* fleet data */
    	$Fleet = Array();
@@ -28,8 +29,7 @@
   	/* Paste text */
    	$PasteText = "";
 
-	function CreateShipGroup( &$ShipGroup, $ShipType, $BeginAmount)
-    {
+	function CreateShipGroup( string $ShipGroup, string $ShipType, string $BeginAmount): void {
         $ShipGroup["Type"] = $ShipType;
         $ShipGroup["BeginAmount"] = $BeginAmount;
         $ShipGroup["Amount"] = $BeginAmount;
@@ -41,16 +41,14 @@
         $ShipGroup["TargetNr"] = 0;
     }
 
-	function CalcLog( $InputString, $deepness = 1 )
-	{
+	function CalcLog( string $InputString, string $deepness = 1 ): void {
 		global $CalcLog, $DepthLog;
 
 		if ( $deepness == $DepthLog )
 			$CalcLog .= $InputString;
 	}
 
-	function AddTotals ( $Type, &$Total, $Amount )
-	{
+	function AddTotals ( string $Type, string $Total, string $Amount ): void {
 		$Total["Amount"]  = (ISSET($Total) && array_key_exists("Amount", $Total)?$Total["Amount"]:0) + $Amount;
 		$Total["Fuel"]    = (ISSET($Total) && array_key_exists("Fuel", $Total )?$Total["Fuel"] :0) + $Amount * $Type["Fuel"];
 		$Total["Crystal"] = (ISSET($Total) && array_key_exists("Crystal", $Total )?$Total["Crystal"] :0) + $Amount * $Type["Crystal"];
@@ -61,16 +59,14 @@
 			$Total["Worth"] = (ISSET($Total) && array_key_exists("Worth", $Total )?$Total["Worth"] :0) + $Amount * 1500;
 	}
 
-	function CalcTotals ( $Flt, $t, &$Totals )
-	{
+	function CalcTotals ( string $Flt, string $t, string $Totals ): void {
 		AddTotals( $Flt["Ships"][$t]["Type"], $Totals["TotalShips"], $Flt["Ships"][$t]["BeginAmount"] );
 		AddTotals( $Flt["Ships"][$t]["Type"], $Totals["TotalLost"], $Flt["Ships"][$t]["BeginAmount"]- $Flt["Ships"][$t]["Amount"] ); /* Removed " + $Flt[$t]["Gained"]" */
 		AddTotals( $Flt["Ships"][$t]["Type"], $Totals["TotalStunned"], $Flt["Ships"][$t]["Stunned"] );
 
 	}
 
-    function MainLoop ( $NumCalcs )
-    {
+    function MainLoop ( string $NumCalcs ): void {
         global $ShipTypes, $Fleet, $CalcLogBuffer;
 
         for( $t = 0 ; $t < $NumCalcs ; $t++ )
@@ -114,8 +110,7 @@
 
     }
 
-    function ActInitiative ( &$AttFlt, &$DefFlt, $InitCount, $who )
-    {
+    function ActInitiative ( string $AttFlt, string $DefFlt, string $InitCount, string $who ): void {
     	global $CalcLogBuffer;
 
     	$Att = &$AttFlt["Ships"];
@@ -194,8 +189,7 @@
         }
     }
 
-    function IsTarget ( $AttType, $DefType, $Target )
-    {
+    function IsTarget ( string $AttType, string $DefType, string $Target ): void {
     	global $EmpTargets;
 
         if ( $DefType["ShipClass"] == $Target || $Target == "*" )
@@ -218,8 +212,7 @@
 	    return false;
 	}
 
-    function AttackTargets( &$AttFlt, &$Att, &$DefFlt, &$Def, $Target, $inGuns )
-    {
+    function AttackTargets( string $AttFlt, string $Att, string $DefFlt, string $Def, string $Target, string $inGuns ): void {
 		global $CalcType, $Warning, $CalcLogBuffer, $RoidChance, $RoidChanceHistory, $CapRule;
 
 		/* Return Done if shooter is an EMPer and targeting "*" */
@@ -363,8 +356,7 @@
 	    return array($inGuns-$ShotsUsed, false);
     }
 
-	function ResolveAvgShots( $FiringOnThese, &$AttShips, &$DefShips, &$Def, $RoidChance )
-	{
+	function ResolveAvgShots( string $FiringOnThese, string $AttShips, string $DefShips, string $Def, string $RoidChance ): void {
 		global $CalcLogBuffer;
 
 		/* returns shots fired, calcs & adds casualties */
@@ -528,8 +520,7 @@
 		}
 	}
 
-    function ResolveShot( $AttShips, $DefShips )
-    {
+    function ResolveShot( string $AttShips, string $DefShips ): void {
 	    $RandomNr= rand(0, 100);
 
 		if ( $AttShips["Type"]["Special"] == "EMPs" )
@@ -547,8 +538,7 @@
 //            $DefShips["BeingStolen"] = true;
     }
 
-    function CleanUp( &$DefFlt )
-    {
+    function CleanUp( string $DefFlt ): void {
     	$Def = &$DefFlt["Ships"];
     	$DefFlt["Totals"] = null;
 
@@ -587,8 +577,7 @@
         }
     }
 
-    function ClearHitsStuns ( &$Flt )
-    {
+    function ClearHitsStuns ( string $Flt ): void {
 		for ( $t = 0; $t < count($Flt); $t++ )
         {
         	$Flt[$t]["Stunned"] = 0;
@@ -596,8 +585,7 @@
         }
     }
 
-	function GetJSTargets ( $Att, $AttNr, $Def, $Side, $Target )
-	{
+	function GetJSTargets ( string $Att, string $AttNr, string $Def, string $Side, string $Target ): void {
 		if ($Target == "Target1")
 			$TmpTarget = 0;
 		elseif ($Target == "Target2")
@@ -631,8 +619,7 @@
 	}
 
 
-    function WriteJSInfo( &$Att, &$Def, $Side )
-    {
+    function WriteJSInfo( string $Att, string $Def, string $Side ): void {
 
 		echo "   ShipTargets[$Side] = new Array;\n";
 
@@ -649,10 +636,8 @@
 
 	}
 
-    function WriteFleets( $AttFlt, $DefFlt )
-    {
-		function MakeResult( $amount, $report, $report_in_place )
-		{
+    function WriteFleets( string $AttFlt, string $DefFlt ): void {
+		function MakeResult( string $amount, string $report, string $report_in_place ): void {
 			global $overall_accuracy;
 
 			if ( $report_in_place && ($report || $amount) )
@@ -890,8 +875,7 @@
 		/* end function WriteFleets */
 	}
 
-	function AddKilosMils ( $Value )
-	{
+	function AddKilosMils ( string $Value ): void {
 		/* put a ..k or ...M after values to shorten them */
 		if ( $Value > 20000000 )
 			return round($Value / 100000)/10 . "M";
@@ -901,8 +885,7 @@
 		return $Value;
 	}
 
-	function FillFleet( $Command, $Array )
-	{
+	function FillFleet( string $Command, string $Array ): void {
 	        global $ShipTypes, $Fleet, $ShipBattleRep, $PasteText;
 	
         	$Fleet[0]["Side"] = "<span class=attacker>Attacker</span>";
@@ -1038,7 +1021,7 @@
         {
         	$tel_att = 0;
         	$tel_def = 0;
-		    foreach( (array)$Array as $key => $value )
+		    forforeach ( (array)$Array as $key => $value )
 		    {
 		    	if ( $key[0] == "t" )
 		    	{

@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -22,7 +22,7 @@
 require_once "admhead.php";
 require_once "admform.php";
 
-function pval ($val) {
+function pval (string $val): void {
   return number_format($val, 0, ",", ".");
 }
 

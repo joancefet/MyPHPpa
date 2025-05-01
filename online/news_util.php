@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -22,14 +22,14 @@
 // require "planet_util.inc";
 // require "fleet_util.php";
 
-function set_has_news ($id) {
+function set_has_news (string $id): void {
   global $db, $myrow, $Planetid;
 
   mysqli_query ($db, "UPDATE LOW_PRIORITY planet SET has_news=1 WHERE id='$id'");
   if ($id == $Planetid) $myrow["has_news"] = 1;
 }
 
-function insert_into_news ($id, $type, &$text) {
+function insert_into_news (string $id, string $type, string $text): void {
   global $db, $mytick;
 
   $q = "INSERT DELAYED INTO news set planet_id='$id',date=now(), type='$type',".
@@ -40,7 +40,7 @@ function insert_into_news ($id, $type, &$text) {
   if (mysqli_query ($db, $q)) set_has_news ($id);
 }
 
-function send_donation_news ($id, $m=0, $c=0, $e=0) {
+function send_donation_news (string $id, string $m=0, string $c=0, string $e=0): void {
     
   $text = "Your received a donation of";
 
@@ -60,7 +60,7 @@ function send_donation_news ($id, $m=0, $c=0, $e=0) {
   insert_into_news ($id, 2, $text);
 }
 
-function send_msg_fleet_recall ($target_id, $eta, $order) {
+function send_msg_fleet_recall (string $target_id, string $eta, string $order): void {
   global $db, $Planetid, $myrow;
 
   $tc = get_coord_name ($target_id);
@@ -82,7 +82,7 @@ function send_msg_fleet_recall ($target_id, $eta, $order) {
   insert_into_news ($target_id, 9, $text_other);
 }
 
-function send_msg_fleet_move ($target_id, $eta, $order, $flnum, $name="ship") {
+function send_msg_fleet_move (string $target_id, string $eta, string $order, string $flnum, string $name="ship"): void {
   global $db, $Planetid, $myrow;
 
   $result = mysqli_query($db, "SELECT fleet_id FROM fleet WHERE planet_id='$Planetid' and num='$flnum'");

@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -32,7 +32,7 @@ $imgpath="true";
 $_SESSION["ImgPath"] = $imgpath;
 require_once "header.php";
 
-function db_error ($txt="Database error") {
+function db_error (string $txt="Database error"): void {
 
   echo "<html><body><br>";
   echo "<b>$txt</b>";
@@ -40,7 +40,7 @@ function db_error ($txt="Database error") {
   die;
 }
 
-function check_legal ($n, $p) {
+function check_legal (string $n, string $p): void {
 
   if (preg_match ("/</", $n) || preg_match ("/</", $p) ||  
       preg_match ("/admin/i",  $n) || preg_match ("/admin/i", $p) ) { 
@@ -49,7 +49,7 @@ function check_legal ($n, $p) {
   return 0;
 }
 
-function check_length ($l, $n, $p) {
+function check_length (string $l, string $n, string $p): void {
 
   if (strlen($n) < 4  || strlen($p) < 4  || strlen($l) < 2 || 
       strlen($n) > 20 || strlen($p) > 20 || strlen($l) > 25) {
@@ -59,7 +59,7 @@ function check_length ($l, $n, $p) {
   return 0;
 }
 
-function check_taken_planet ($n, $p) {
+function check_taken_planet (string $n, string $p): void {
   global $db;
 
   $result = mysqli_query($db, "SELECT * FROM planet " .
@@ -76,7 +76,7 @@ function check_taken_planet ($n, $p) {
   return $ret;
 }
 
-function check_taken_user ($l, $e) {
+function check_taken_user (string $l, string $e): void {
   global $db;
 
   $result = mysqli_query($db, "SELECT * FROM user " .
@@ -93,7 +93,7 @@ function check_taken_user ($l, $e) {
   return $ret;
 }
 
-function check_email ($e) {
+function check_email (string $e): void {
 
   if ($e && (!filter_var($e,FILTER_VALIDATE_EMAIL) ||
 	     !preg_match ("/@/", $e) || 
@@ -111,7 +111,7 @@ function check_email ($e) {
  return 0;
 }
 
-function send_password($pid) {
+function send_password(string $pid): void {
   global $game, $db, $round, $imgpath;
 
   $q = "SELECT email, login, password FROM user WHERE planet_id=$pid ";

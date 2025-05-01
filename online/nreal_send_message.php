@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -19,7 +19,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-function insert_message ($target_id,  $tname, $subject, $text, $copy=1) {
+function insert_message (string $target_id,  string $tname, string $subject, string $text, string $copy=1): void {
   global $db, $Planetid;
 
   $text = mysqli_real_escape_string($db, $text);
@@ -47,7 +47,7 @@ function insert_message ($target_id,  $tname, $subject, $text, $copy=1) {
   return $msg;
 }
 
-function send_message_form ($width, $moc=0) {
+function send_message_form (string $width, string $moc=0): void {
   global $Planetid, $db,  $send_to ,  $mail_id;
 
   if(ISSET($_REQUEST["reply"])) $reply = $_REQUEST["reply"];

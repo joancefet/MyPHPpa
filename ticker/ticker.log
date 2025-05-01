@@ -73277,3 +73277,728 @@ Ticker start: Thu May  1 16:49:49 2025
    ****: 0 s 008 ms
 Ticker end  : Thu May  1 16:49:49 2025
 Runtime: 0 s 008 ms
+
+Ticker start: Thu May  1 16:50:19 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 002 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 002 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 003 ms
+[1] update_resources
+   ****: 0 s 003 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 005 ms
+[1] do_clean_ups
+   ****: 0 s 006 ms
+Ticker end  : Thu May  1 16:50:19 2025
+Runtime: 0 s 006 ms
+
+Ticker start: Thu May  1 16:50:49 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 001 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 002 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 003 ms
+[1] update_resources
+   ****: 0 s 003 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+[2] calc_score selects
+   ****: 0 s 000 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 004 ms
+[1] do_clean_ups
+   ****: 0 s 006 ms
+Ticker end  : Thu May  1 16:50:49 2025
+Runtime: 0 s 006 ms
+
+Ticker start: Thu May  1 16:51:19 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 003 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 004 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 004 ms
+[1] update_resources
+   ****: 0 s 004 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+[2] calc_score selects
+   ****: 0 s 000 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 006 ms
+[1] do_clean_ups
+   ****: 0 s 007 ms
+Ticker end  : Thu May  1 16:51:19 2025
+Runtime: 0 s 007 ms
+
+Ticker start: Thu May  1 16:51:49 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 003 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 004 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 005 ms
+[1] update_resources
+   ****: 0 s 005 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 001 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 007 ms
+[1] do_clean_ups
+   ****: 0 s 008 ms
+Ticker end  : Thu May  1 16:51:49 2025
+Runtime: 0 s 008 ms
+
+Ticker start: Thu May  1 16:52:19 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 001 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 002 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 003 ms
+[1] update_resources
+   ****: 0 s 003 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 001 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 005 ms
+[1] do_clean_ups
+   ****: 0 s 006 ms
+Ticker end  : Thu May  1 16:52:19 2025
+Runtime: 0 s 006 ms
+
+Ticker start: Thu May  1 16:52:49 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 002 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 002 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 003 ms
+[1] update_resources
+   ****: 0 s 003 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 005 ms
+[1] do_clean_ups
+   ****: 0 s 006 ms
+Ticker end  : Thu May  1 16:52:49 2025
+Runtime: 0 s 006 ms
+
+Ticker start: Thu May  1 16:53:19 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 002 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 003 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 003 ms
+[1] update_resources
+   ****: 0 s 003 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+[2] calc_score selects
+   ****: 0 s 000 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 005 ms
+[1] do_clean_ups
+   ****: 0 s 006 ms
+Ticker end  : Thu May  1 16:53:19 2025
+Runtime: 0 s 006 ms
+
+Ticker start: Thu May  1 16:53:49 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 002 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 003 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 003 ms
+[1] update_resources
+   ****: 0 s 004 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 001 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 005 ms
+[1] do_clean_ups
+   ****: 0 s 007 ms
+Ticker end  : Thu May  1 16:53:49 2025
+Runtime: 0 s 007 ms
+
+Ticker start: Thu May  1 16:54:19 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 002 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 003 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 003 ms
+[1] update_resources
+   ****: 0 s 004 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 001 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 005 ms
+[1] do_clean_ups
+   ****: 0 s 007 ms
+Ticker end  : Thu May  1 16:54:19 2025
+Runtime: 0 s 007 ms
+
+Ticker start: Thu May  1 16:54:49 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 002 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 003 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 004 ms
+[1] update_resources
+   ****: 0 s 004 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 001 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 005 ms
+[1] do_clean_ups
+   ****: 0 s 007 ms
+Ticker end  : Thu May  1 16:54:49 2025
+Runtime: 0 s 007 ms
+
+Ticker start: Thu May  1 16:55:19 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 002 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 002 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 003 ms
+[1] update_resources
+   ****: 0 s 003 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 005 ms
+[1] do_clean_ups
+   ****: 0 s 007 ms
+Ticker end  : Thu May  1 16:55:19 2025
+Runtime: 0 s 007 ms
+
+Ticker start: Thu May  1 16:55:49 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 002 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 003 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 004 ms
+[1] update_resources
+   ****: 0 s 004 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 005 ms
+[1] do_clean_ups
+   ****: 0 s 007 ms
+Ticker end  : Thu May  1 16:55:49 2025
+Runtime: 0 s 007 ms
+
+Ticker start: Thu May  1 16:56:19 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 002 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 003 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 004 ms
+[1] update_resources
+   ****: 0 s 004 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 006 ms
+[1] do_clean_ups
+   ****: 0 s 007 ms
+Ticker end  : Thu May  1 16:56:19 2025
+Runtime: 0 s 007 ms
+
+Ticker start: Thu May  1 16:56:49 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 002 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 003 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 003 ms
+[1] update_resources
+   ****: 0 s 003 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 001 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 002 ms
+   ****: 0 s 006 ms
+[1] do_clean_ups
+   ****: 0 s 007 ms
+Ticker end  : Thu May  1 16:56:49 2025
+Runtime: 0 s 007 ms
+
+Ticker start: Thu May  1 16:57:19 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 001 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 002 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 003 ms
+[1] update_resources
+   ****: 0 s 003 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 001 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 002 ms
+   ****: 0 s 006 ms
+[1] do_clean_ups
+   ****: 0 s 007 ms
+Ticker end  : Thu May  1 16:57:19 2025
+Runtime: 0 s 007 ms
+
+Ticker start: Thu May  1 16:57:49 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 002 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 002 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 003 ms
+[1] update_resources
+   ****: 0 s 003 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 001 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 005 ms
+[1] do_clean_ups
+   ****: 0 s 006 ms
+Ticker end  : Thu May  1 16:57:49 2025
+Runtime: 0 s 006 ms
+
+Ticker start: Thu May  1 16:58:19 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 002 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 002 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 003 ms
+[1] update_resources
+   ****: 0 s 003 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 001 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 005 ms
+[1] do_clean_ups
+   ****: 0 s 006 ms
+Ticker end  : Thu May  1 16:58:19 2025
+Runtime: 0 s 006 ms
+
+Ticker start: Thu May  1 16:58:49 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 002 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 003 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 004 ms
+[1] update_resources
+   ****: 0 s 004 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 001 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 006 ms
+[1] do_clean_ups
+   ****: 0 s 008 ms
+Ticker end  : Thu May  1 16:58:49 2025
+Runtime: 0 s 008 ms
+
+Ticker start: Thu May  1 16:59:19 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 002 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 003 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 004 ms
+[1] update_resources
+   ****: 0 s 004 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 005 ms
+[1] do_clean_ups
+   ****: 0 s 007 ms
+Ticker end  : Thu May  1 16:59:19 2025
+Runtime: 0 s 007 ms
+
+Ticker start: Thu May  1 16:59:49 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 004 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 004 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 005 ms
+[1] update_resources
+   ****: 0 s 005 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 001 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 007 ms
+[1] do_clean_ups
+   ****: 0 s 008 ms
+Ticker end  : Thu May  1 16:59:49 2025
+Runtime: 0 s 008 ms
+
+Ticker start: Thu May  1 17:00:19 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 002 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 004 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 004 ms
+[1] update_resources
+   ****: 0 s 004 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 006 ms
+[1] do_clean_ups
+   ****: 0 s 007 ms
+Ticker end  : Thu May  1 17:00:19 2025
+Runtime: 0 s 007 ms
+
+Ticker start: Thu May  1 17:00:49 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 003 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 004 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 004 ms
+[1] update_resources
+   ****: 0 s 005 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 001 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 007 ms
+[1] do_clean_ups
+   ****: 0 s 008 ms
+Ticker end  : Thu May  1 17:00:49 2025
+Runtime: 0 s 008 ms
+
+Ticker start: Thu May  1 17:01:19 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 002 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 003 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 004 ms
+[1] update_resources
+   ****: 0 s 004 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 001 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 002 ms
+   ****: 0 s 006 ms
+[1] do_clean_ups
+   ****: 0 s 008 ms
+Ticker end  : Thu May  1 17:01:19 2025
+Runtime: 0 s 008 ms
+
+Ticker start: Thu May  1 17:01:49 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 002 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 002 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 003 ms
+[1] update_resources
+   ****: 0 s 003 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 001 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 005 ms
+[1] do_clean_ups
+   ****: 0 s 006 ms
+Ticker end  : Thu May  1 17:01:49 2025
+Runtime: 0 s 006 ms
+
+Ticker start: Thu May  1 17:02:19 2025
+[1] update_build
+[1] move_fleets
+   ****: 0 s 002 ms
+[1] calc_battles
+[4] get_unit_class
+[3] calc_battles - got units
+   ****: 0 s 002 ms
+[1] update_research 1
+[1] get_rc_class
+[1] update_research end
+   ****: 0 s 003 ms
+[1] update_resources
+   ****: 0 s 003 ms
+[1] calc_score
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 000 ms
+   ****: 0 s 001 ms
+[2] calc_score selects
+   ****: 0 s 001 ms
+[2] calc_score end
+   ****: 0 s 001 ms
+   ****: 0 s 005 ms
+[1] do_clean_ups
+   ****: 0 s 006 ms
+Ticker end  : Thu May  1 17:02:19 2025
+Runtime: 0 s 006 ms

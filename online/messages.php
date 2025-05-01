@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -23,7 +23,7 @@ require "popup_header.inc";
 require "standard.php";
 require "planet_util.inc";
 
-function make_popup_link ($title, $link, $arg) {
+function make_popup_link (string $title, string $link, string $arg): void {
   global $myrow;
 
   // not used or not usefull
@@ -37,7 +37,7 @@ function make_popup_link ($title, $link, $arg) {
   return "javascript:popupWindow('$title','$link?$arg',340,700)";
 }
 
-function print_mail ($r) {
+function print_mail (string $r): void {
   global $Planetid, $folder;
 
   $id = $r["id"];
@@ -77,7 +77,7 @@ function print_mail ($r) {
   echo "</td></tr></table>";
 }
 
-function print_jtd ($text, $cp, $link="", $jscript=0) {
+function print_jtd (string $text, string $cp, string $link="", string $jscript=0): void {
   global $browser_type, $imgpath;
 
   $width = (100. / 6. ) * $cp;
@@ -118,7 +118,7 @@ function print_jtd ($text, $cp, $link="", $jscript=0) {
   }
 }
 
-function msg_menu ($folder) {
+function msg_menu (string $folder): void {
   global $Planetid, $db;
 
   echo <<<EOF
@@ -177,7 +177,7 @@ EOF;
   echo "</tr></table>\n";
 }
 
-function moc_menu ($x, $y) {
+function moc_menu (string $x, string $y): void {
 
   echo <<<EOF
 <br>

@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -22,7 +22,7 @@
 require_once "admhead.php";
 require_once "admform.php";
 
-function print_news_head ($date, $type, $tick) {
+function print_news_head (string $date, string $type, string $tick): void {
 
   switch ($type) {
   case 1: $img = "Bat"; $txt = "Military"; break;

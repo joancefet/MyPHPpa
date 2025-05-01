@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -22,11 +22,11 @@
 require "standard.php";
 require "fleet_util.php";
 
-function print_coords ($x, $y, $z) {
+function print_coords (string $x, string $y, string $z): void {
   return "<A HREF=\"galaxy.php?submit=1&x=$x&y=$y\">$x:$y:$z</A>";
 }
 
-function print_color ($text, $color=0) {
+function print_color (string $text, string $color=0): void {
   if ($color == 0) {
     $c="red";
   } else {
@@ -35,13 +35,12 @@ function print_color ($text, $color=0) {
   return "<span class=\"$c\">$text</span>";
 }
 
-function add_recall_link ($f) {
+function add_recall_link (string $f): void {
   $a = "<td class=\"tdlink\"><a href=\"military.php?execute=1&fleet_$f=255\">R</a></td>\n";
   return $a;
 }
 
-function print_fleet_id ($pid, $eta, $size, $type, $num=0)
-{  
+function print_fleet_id (string $pid, string $eta, string $size, string $type, string $num=0): void {  
   global $db, $Planetid;
 
   $result = mysqli_query ($db, "SELECT planetname, x, y, z FROM planet WHERE id='$pid'");
@@ -75,7 +74,7 @@ function print_fleet_id ($pid, $eta, $size, $type, $num=0)
   return $ret;
 }
 
-function add_def_link ($x, $y, $z) {
+function add_def_link (string $x, string $y, string $z): void {
   $a = "<th><a href=\"military.php?execute=1&fleet_1=6&".
      "fleet_1_x=$x&fleet_1_y=$y&fleet_1_z=$z\">1</a>&nbsp;";
   $a .= "<a href=\"military.php?execute=1&fleet_2=6&".
@@ -85,7 +84,7 @@ function add_def_link ($x, $y, $z) {
   return $a;
 }
 
-function print_planet ($name, $x, $y, $z, $f, $h, $id, $d) {
+function print_planet (string $name, string $x, string $y, string $z, string $f, string $h, string $id, string $d): void {
   global $Planetid;
 
   if ($id == $Planetid) {
@@ -109,7 +108,7 @@ function print_planet ($name, $x, $y, $z, $f, $h, $id, $d) {
   return $m;
 }
 
-function fetch_planet ($pid, &$f, &$h, $direction) {
+function fetch_planet (string $pid, string $f, string $h, string $direction): void {
 
   global $db, $Planetid;
 
@@ -155,7 +154,7 @@ function fetch_planet ($pid, &$f, &$h, $direction) {
   return $target_fleet;
 }
 
-function print_total ($x, $y, $direction) {
+function print_total (string $x, string $y, string $direction): void {
   global $db;
 
   /*
@@ -192,11 +191,11 @@ function print_total ($x, $y, $direction) {
 
 }
 
-function print_incoming ($x, $y) {
+function print_incoming (string $x, string $y): void {
   print_total ($x, $y, 0);
 }
 
-function print_outgoing ($x, $y) {
+function print_outgoing (string $x, string $y): void {
   print_total ($x, $y, 1);
 }
 

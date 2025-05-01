@@ -1,6 +1,6 @@
 <?php
-    function CreateShipType( &$ShipType, $TypeNr, $Name, $FormName, $ShipClass, $T1, $T2, $T3, $Init, $Agility, $WP_SP, $Guns, $GunPwr, $Armour, $EMP_res, $Metal, $Crystal, $Eonium, $Fuel, $Travel, $Special )
-    {
+declare(strict_types=1);
+function CreateShipType( string $ShipType, string $TypeNr, string $Name, string $FormName, string $ShipClass, string $T1, string $T2, string $T3, string $Init, string $Agility, string $WP_SP, string $Guns, string $GunPwr, string $Armour, string $EMP_res, string $Metal, string $Crystal, string $Eonium, string $Fuel, string $Travel, string $Special ): void {
         $ShipType = Array(
         	"TypeNr" => $TypeNr,
         	"Name" => $Name,

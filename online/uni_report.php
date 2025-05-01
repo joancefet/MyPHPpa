@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -19,7 +19,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-function get_alliance_tag($aid) {
+function get_alliance_tag(string $aid): void {
   global $db, $myrow;
 
   if ($aid == 0)
@@ -34,7 +34,7 @@ function get_alliance_tag($aid) {
  }
 }
 
-function print_uni_row ($rank, $row) {
+function print_uni_row (string $rank, string $row): void {
   global $Planetid, $myrow, $tag;
 
   $tag_cell = "";
@@ -74,7 +74,7 @@ function print_uni_row ($rank, $row) {
     "</tr>\n";
 }
 
-function print_universe_player_report ($db) {
+function print_universe_player_report (string $db): void {
   global $tag, $myrow;
 
   if (($myrow["status"] & 2)==0 && $myrow["alliance_id"] != 0)
@@ -101,7 +101,7 @@ function print_universe_player_report ($db) {
   }
 }
 
-function print_gal_row ($rank, $row) {
+function print_gal_row (string $rank, string $row): void {
   global $myrow, $db;
 
   if ($myrow["x"] == $row[0] && $myrow["y"] == $row[1]) {
@@ -130,7 +130,7 @@ function print_gal_row ($rank, $row) {
     "</tr>\n";
 }
 
-function print_universe_galaxy_report ($galrank) {
+function print_universe_galaxy_report (string $galrank): void {
   // global $db;
 
   if ($galrank != 0) {
@@ -145,7 +145,7 @@ function print_universe_galaxy_report ($galrank) {
 
 }
 
-function get_universe_galaxy_report (&$myrank) {
+function get_universe_galaxy_report (string $myrank): void {
   global $db, $myrow;
 
   $myrank = 0;
@@ -177,7 +177,7 @@ function get_universe_galaxy_report (&$myrank) {
   }
 }
 
-function print_alliance_row ($rank, $row) {
+function print_alliance_row (string $rank, string $row): void {
   global $myrow;
 
   if ($myrow["alliance_id"] == $row["aid"])
@@ -195,7 +195,7 @@ function print_alliance_row ($rank, $row) {
 EOF;
 }
 
-function print_universe_alliance_report () {
+function print_universe_alliance_report (): void {
   global $db;
 
   $q = "SELECT alliance.id AS aid, tag, hcname, members, ".

@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -19,7 +19,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-function get_eta ($fleet_num) {
+function get_eta (string $fleet_num): void {
   global $db, $Planetid, $myrow;
 
   $q = "SELECT MAX(uc.speed) FROM fleet,units,unit_class AS uc ".
@@ -37,7 +37,7 @@ function get_eta ($fleet_num) {
   return array($eta, $eta+1, $eta+4);
 }
 
-function get_target_eta ($fleet_num, $x, $y, $z) {
+function get_target_eta (string $fleet_num, string $x, string $y, string $z): void {
   global $db, $Planetid, $myrow;
 
   $eta = get_eta ($fleet_num);
@@ -52,7 +52,7 @@ function get_target_eta ($fleet_num, $x, $y, $z) {
   }
 }
 
-function get_fuel ($fleet_num) {
+function get_fuel (string $fleet_num): void {
   global $db, $Planetid;
 
   $q = "SELECT SUM(uc.fuel * units.num) FROM fleet,units,unit_class AS uc ".
@@ -70,7 +70,7 @@ function get_fuel ($fleet_num) {
   return array ( (int) ($fuel/5), (int)($fuel/2), $fuel);
 }
 
-function get_target_fuel ($fleet_num, $x, $y, $z) {
+function get_target_fuel (string $fleet_num, string $x, string $y, string $z): void {
   global $db, $Planetid, $myrow;
 
   $fuel = get_fuel ($fleet_num);
@@ -87,8 +87,7 @@ function get_target_fuel ($fleet_num, $x, $y, $z) {
 
 }
 
-function fetch_fleet_sum ($fleet_id)
-{
+function fetch_fleet_sum (string $fleet_id): void {
   global $db;
 
   $q = "SELECT SUM(units.num) FROM units, unit_class AS uc ".

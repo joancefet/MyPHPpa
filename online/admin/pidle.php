@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 /*
  * MyPHPpa
  * Copyright (C) 2003, 2007 Jens Beyer
@@ -22,7 +22,7 @@
 require_once "admhead.php";
 require_once "admform.php";
 
-function idle_players () {
+function idle_players (): void {
   global $db;
 
   $q = "select leader,id,score,x,y,z,UNIX_TIMESTAMP(user.last) - ".
