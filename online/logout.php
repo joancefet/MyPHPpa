@@ -1,64 +1,54 @@
 <?php
 
-/*
- * MyPHPpa
- * Copyright (C) 2003, 2007 Jens Beyer
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- */
-
 require "options.php";
 require "dblogon.php";
 require "logging.php";
 include_once "session.inc";
 
 session_init();
-if (session_check()) {
-  echo "error check session";
-  // Header("Location: index.php");
-  die;
- }
 
-if ( $Planetid>0 ) {
-  $result = mysqli_query($db, "UPDATE user SET uptime=".
-             "SEC_TO_TIME(UNIX_TIMESTAMP(last) - UNIX_TIMESTAMP(login_date) + ".
-             "TIME_TO_SEC(uptime)) ".
-             "WHERE planet_id='$Planetid' AND (mode&0xF) = 2");
-  $result = mysqli_query($db, "UPDATE planet SET mode=((mode & 0xF0) + 1) ".
-		      "WHERE id='$Planetid' AND (mode&0xF) = 2" );
-  do_log_me(2, 1,""); 
-  // event:logout=2, class:login/out=1
+// Verifica se a sessão ainda é válida
+if (session_check()) {
+    echo "Erro ao verificar sessão.";
+    exit;
+}
+
+if ($Planetid > 0) {
+    // Atualiza o tempo de uso do jogador antes de desconectar
+    mysqli_query($db,
+        "UPDATE user SET uptime = SEC_TO_TIME(UNIX_TIMESTAMP(last) - UNIX_TIMESTAMP(login_date) + TIME_TO_SEC(uptime)) 
+         WHERE planet_id = '$Planetid' AND planet_id IN (SELECT id FROM planet WHERE (mode & 0xF) = 2)");
+
+    // Marca o planeta como desconectado
+    mysqli_query($db,
+        "UPDATE planet SET mode = ((mode & 0xF0) + 1) 
+         WHERE id = '$Planetid' AND (mode & 0xF) = 2");
+
+    do_log_me(2, 1, ""); // Log de logout
 }
 
 session_kill();
-// setcookie("Username","");
-// setcookie("Password","");
-// setcookie("mysession","");
-// setcookie("Planetid","-1");
-
-require "header.php";
-my_header();
 ?>
 
-<br>
-<center>
-Goodbye and have a nice day :-)
-<p>
-Go to <a href="index.php">login</a> page.
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Logout - MyPHPpa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-light d-flex flex-column justify-content-center align-items-center min-vh-100">
+    <div class="card text-dark bg-light shadow p-4" style="max-width: 420px; width: 100%;">
+        <div class="text-center mb-4">
+            <h4 class="card-title">Logout realizado</h4>
+            <p class="mb-0">Goodbye and have a nice day :-)</p>
+        </div>
+        <div class="text-center mt-3">
+            <a href="index.php" class="btn btn-primary">Voltar para a tela de login</a>
+        </div>
+    </div>
 
-
-<?php
-require "footer.php";
-?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
